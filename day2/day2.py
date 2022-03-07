@@ -44,8 +44,23 @@ def Part1(inputs: list[str]) -> int:
     return subPos.x * subPos.y
 
 
+def Part2(inputs: list[str]) -> int:
+    subPos = Vector2()
+    aim = 0
+
+    for i in inputs:
+        subCom = ReadCommand(i)
+        subPos.x += subCom.x
+        aim += subCom.y
+
+        # Calculate Depth
+        subPos.y += aim * subCom.x
+    return subPos.x * subPos.y
+
+
 def solve(path: str) -> int:
     print(f"Day 2 - Part 1 Solution: {Part1(parse(path))}")
+    print(f"Day 2 - Part 2 Solution: {Part2(parse(path))}")
     return 0
 
 
