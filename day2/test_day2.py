@@ -1,5 +1,5 @@
 from pathlib import Path
-from day2 import Vector2, ReadCommand, Part1, Part2, parse
+from day2 import Vector2, ReadCommand, Part1, Part2, Parse
 
 PROJECT_DIR: str = Path(__file__).parent
 
@@ -39,10 +39,10 @@ def test_read_command():
 
 
 def test_day2_part1_example():
-    p = parse(f"{PROJECT_DIR}/example.txt")
+    p = Parse(f"{PROJECT_DIR}/example.txt")
     assert Part1(p) == 150
 
 
 def test_day2_part2_example():
-    p = parse(f"{PROJECT_DIR}/example.txt")
+    p = Parse(f"{PROJECT_DIR}/example.txt")
     assert Part2(p) == 900

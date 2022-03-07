@@ -17,7 +17,7 @@ class Vector2:
 
 
 # Read command
-def parse(filePath: str) -> list[int]:
+def Parse(filePath: str) -> list[int]:
     inputs = Path(filePath).read_text().strip()
     return inputs.split("\n")
 
@@ -58,12 +58,12 @@ def Part2(inputs: list[str]) -> int:
     return subPos.x * subPos.y
 
 
-def solve(path: str) -> int:
-    print(f"Day 2 - Part 1 Solution: {Part1(parse(path))}")
-    print(f"Day 2 - Part 2 Solution: {Part2(parse(path))}")
+def Solve(path: str) -> int:
+    print(f"Day 2 - Part 1 Solution: {Part1(Parse(path))}")
+    print(f"Day 2 - Part 2 Solution: {Part2(Parse(path))}")
     return 0
 
 
 if __name__ == "__main__":
     for path in sys.argv[1:]:
-        solve(path)
+        Solve(path)
