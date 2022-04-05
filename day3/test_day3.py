@@ -22,3 +22,25 @@ def test_GetElipsonRate():
 def test_GetGammaRate():
     input = day3.Parse(f"{PROJECT_DIR}/example.txt")
     assert day3.GetGammaRate(input) == 22
+
+
+def test_PowerConsumption():
+    input = day3.Parse(f"{PROJECT_DIR}/example.txt")
+    powerConsumption = day3.GetGammaRate(input) * day3.GetElipsonRate(input)
+    assert powerConsumption == 198
+
+
+def test_GetOxyRating():
+    input = day3.Parse(f"{PROJECT_DIR}/example.txt")
+    assert day3.GetOxyRating(input) == 23
+
+
+def test_GetCo2Rating():
+    input = day3.Parse(f"{PROJECT_DIR}/example.txt")
+    assert day3.GetCo2Rating(input) == 10
+
+
+def test_LifeSupportRating():
+    input = day3.Parse(f"{PROJECT_DIR}/example.txt")
+    lifeSupport = day3.GetOxyRating(input) * day3.GetCo2Rating(input)
+    assert lifeSupport == 230
